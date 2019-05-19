@@ -79,3 +79,22 @@ firstDay =
 weekDay : List Day
 weekDay =
     [ Mon, Tue, Wed, Thu, Fri ]
+
+
+type Lang
+    = En
+    | Ja
+    | Fr
+
+
+hello : Lang -> String
+hello lang =
+    case lang of
+        En ->
+            "Hello"
+
+        Ja ->
+            "こんにちは"
+
+        Fr ->
+            "Bonjour"
