@@ -1,31 +1,29 @@
-module Main exposing (message)
+module Main exposing (main)
+
+import Html exposing (Html, a, div, h1, li, text, ul)
+import Html.Attributes exposing (href)
 
 
-message hour userName =
-    let
-        greeting =
-            if hour < 12 then
-                "Good morning"
-
-            else if hour < 18 then
-                "Good afternoon"
-
-            else
-                "Good evening"
-    in
-    greeting ++ ", " ++ userName ++ "!"
-
-
-evaluate boolean =
-    case boolean of
-        Literal bool ->
-            bool
-
-        Not b ->
-            not (eval b)
-
-        And b b_ ->
-            eval b && eval b_
-
-        Or b b_ ->
-            eval b || eval b_
+main : Html msg
+main =
+    div []
+        [ h1 []
+            [ text "useful Links" ]
+        , ul []
+            [ li []
+                [ a
+                    [ href "https://elm-lang.org" ]
+                    [ text "Elm" ]
+                ]
+            , li []
+                [ a
+                    [ href "https://package.elm-lang.org" ]
+                    [ text "Packages" ]
+                ]
+            , li []
+                [ a
+                    [ href "https://ellie-app.com" ]
+                    [ text "Playground" ]
+                ]
+            ]
+        ]
